@@ -1,0 +1,35 @@
+@import '../../default.less';
+
+.total {
+  .block {
+    width: 50%;
+    display: inline-block;
+    margin: 20px 0;
+    text-align: center;
+    border-right: solid;
+
+    &:last-child,&.no-border {
+      border-right: none;
+    }
+
+    .title {
+      color: @brand-primary;
+      font-size: 24 * @hd;
+      // font-weight: bold;
+      margin-bottom: 2px;
+      overflow: hidden;
+    }
+
+    .text{
+      color: @color-text-secondary;
+      font-size: 16 * @hd;
+    }
+  }
+
+  &.small {
+    .block {
+      width: 25%;
+      margin: 10px 0;
+    }
+  }
+}
