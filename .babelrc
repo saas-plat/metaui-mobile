@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "env", {
+        //"modules": false,
+        "targets": {
+          "browsers": ["last 2 Chrome versions", "IE >= 9"]
+        }
+      }
+    ],
+    "stage-1",
+    "react"
+  ],
+  "plugins": [
+    ["import", {
+      "libraryName": "antd-mobile",
+      "libraryDirectory": "es",
+      "style": true
+    }], "transform-runtime", "transform-decorators-legacy"
+  ]
+}

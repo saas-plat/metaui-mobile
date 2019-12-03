@@ -1,0 +1,44 @@
+{
+  "name": "saas-plat-metauimobile",
+  "version": "1.1.15",
+  "description": "mobile components",
+  "productName": "saas-plat",
+  "main": "dist/index.js",
+  "scripts": {
+    "i": "npm i --registry https://npm.saas-plat.com",
+    "up": "npm update --registry https://npm.saas-plat.com",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "build": "node node_modules/saas-plat-clientTools/bin/build",
+    "pub": "node node_modules/saas-plat-clientTools/bin/publish",
+    "test": "set DEBUG=saas-plat:*,-not_this && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.saas-plat.com/saas-plat-metauiweb"
+  },
+  "keywords": [
+    "mobile",
+    "component",
+    "input",
+    "display",
+    "feedback"
+  ],
+  "author": "saas-plat",
+  "license": "ISC",
+  "dependencies": {
+    "antd-mobile": "^2.3.1",
+    "mobx": "^3.3.3",
+    "mobx-react": "^4.3.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "saas-plat-metaui": "^1.1.0",
+    "saas-plat-expression": "^1.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^4.1.18",
+    "@storybook/react": "^3.4.12",
+    "eslint": "^4.13.1",
+    "saas-plat-clientTools": "^1.0.61"
+  }
+}
