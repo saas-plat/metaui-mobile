@@ -6,15 +6,11 @@ import PropTypes from 'prop-types';
 import {
   List
 } from 'antd-mobile';
-import {
-  createForm
-} from 'rc-form';
-import Input from './Input';
-import ScrollView from 'saas-plat-mobfx/dist/components/ScrollView';
+import ScrollView from './ScrollView';
+import Base from './Base';
 
-@createForm()
 @observer
-export default class Edit extends React.Component {
+export default class Layout extends Base {
   static propTypes = {
     form: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
@@ -24,7 +20,7 @@ export default class Edit extends React.Component {
   renderList(list, value) {
     return (
       <List renderHeader={() => list.headerText} key={list.key}>
-        {list.items.map(input => (<Input key={input.key} config={input} value={value} form={this.props.form}></Input>))}
+        {list.items.map(input => this.renderItem(input,{value,form:this.props.form}))}
       </List>
     );
   }

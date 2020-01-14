@@ -4,7 +4,9 @@ import {
 } from 'antd-mobile';
 import Base from '../Base';
 import './style.less';
-import {topx} from './util';
+import {
+  topx
+} from './util';
 const style = require('!less-to-json-loader!./style.less');
 
 const loadEchart = (cb) => {
@@ -15,13 +17,22 @@ const loadEchart = (cb) => {
 
 export default class Chart extends Base {
 
+  constructor() {
+    super();
+    loadEchart((Echart) => {
+      this.setState({
+        Echart
+      })
+    })
+  }
+
   getOption() {
     const {
       config
     } = this.props;
     //柱状图数据
     const barOption = {
-      color: [style['brand-primary']],  // todo 这里的颜色需要充default.less中取@brand-primary
+      color: [style['brand-primary']], // todo 这里的颜色需要充default.less中取@brand-primary
       tooltip: {
         trigger: 'axis',
         axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -61,14 +72,6 @@ export default class Chart extends Base {
 
   onChartReadyCallback = () => {
     this.context.onEvent(this.props.config, 'ready');
-  }
-
-  componentWillMount() {
-    loadEchart((Echart) => {
-      this.setState({
-        Echart
-      })
-    })
   }
 
   render() {

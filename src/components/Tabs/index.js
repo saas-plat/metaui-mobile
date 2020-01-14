@@ -1,11 +1,11 @@
 import React from 'react';
 import { Tabs } from 'antd-mobile';
 import PropTypes from 'prop-types';
-import Composer from '../Composer';
-import ScrollView from 'saas-plat-mobfx/dist/components/ScrollView';
+import ScrollView from '../ScrollView';
 import './style.less';
+import Base from '../Base';
 
-export default class TabPage extends React.Component{
+export default class TabPage extends Base{
   static propTypes = {
     config: PropTypes.object.isRequired,
     value: PropTypes.object.isRequired,
@@ -45,10 +45,10 @@ export default class TabPage extends React.Component{
   renderPanel(tab){
     if (tab.scroll === true) {
       return (<ScrollView key={tab.key} moreHandler={this.loadMore} refreshHandler={this.refresh}>
-          <Composer className='panel' config={tab.items}/>
+          {tab.items.map(this.renderItem)}
         </ScrollView>);
     }
-    return (<Composer key={tab.key} className='panel' config={tab.items}/>);
+    return tab.items.map(this.renderItem);
   }
 
   renderTab(tabs){
@@ -56,15 +56,15 @@ export default class TabPage extends React.Component{
       return this.renderPanel(tabs.items[0]);
     }
     return (<Tabs page={tabs.page}
-    tabBarPosition={tabs.tabBarPosition}
-    initialPage={tabs.initialPage}
-    swipeable={tabs.swipeable}
-    useOnPan={tabs.useOnPan}
-    animated={tabs.animated}
-    usePaged={tabs.usePaged}
-    tabDirection={tabs.tabDirection}
-    tabs={tabs.items}
-     renderTabBar={props => (<Tabs.DefaultTabBar {...props}  />)}>
+      tabBarPosition={tabs.tabBarPosition}
+      initialPage={tabs.initialPage}
+      swipeable={tabs.swipeable}
+      useOnPan={tabs.useOnPan}
+      animated={tabs.animated}
+      usePaged={tabs.usePaged}
+      tabDirection={tabs.tabDirection}
+      tabs={tabs.items}
+      renderTabBar={props => (<Tabs.DefaultTabBar {...props}  />)}>
       {tabs.items.map(tab=>{
         return this.renderPanel(tab);
       })}

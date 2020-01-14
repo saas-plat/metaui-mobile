@@ -24,7 +24,7 @@ let index = data.length - 1;
 
 let pageIndex = 0;
 
-export default class DetailList extends Base{
+export default class DataTable extends Base{
   static contextTypes = {
     onLoadMore: PropTypes.func,
     onRefresh: PropTypes.func,
