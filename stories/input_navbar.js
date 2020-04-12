@@ -9,13 +9,13 @@ import {
   UIRender,
   UIContainer,
   UIStore,
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 
 import '../src';
 import './style.less';
 
 const navbar = UIStore.create({
-  type: 'nav',
+  type: 'navbar',
   text: 'this is title',
   items: [{
     name: 'search',

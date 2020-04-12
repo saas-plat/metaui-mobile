@@ -9,7 +9,7 @@ import {
   UIContainer,
   UIStore,
   UIRender
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 import '../src';
 
 const data = {
@@ -29,9 +29,9 @@ const data = {
 };
 
 const report = UIStore.create({
-  type: 'list',
+  type: 'view',
   items:[{
-     type: 'nav',
+     type: 'navbar',
      text: 'this is title',
      items: [{
        name: 'search',
@@ -40,7 +40,7 @@ const report = UIStore.create({
        onClick: 'search'
      }]
    }, {
-     type: 'report',
+     type: 'chart',
      tabs: {
        items: [{
          name: 'item1',

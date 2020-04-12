@@ -1,21 +1,27 @@
 {
   "presets": [
     [
-      "env", {
-        //"modules": false,
+      "@babel/env", {
         "targets": {
           "browsers": ["last 2 Chrome versions", "IE >= 9"]
         }
       }
     ],
-    "stage-1",
-    "react"
+    "@babel/react"
   ],
   "plugins": [
     ["import", {
-      "libraryName": "antd-mobile",
+      "libraryName": "antd",
       "libraryDirectory": "es",
       "style": true
-    }], "transform-runtime", "transform-decorators-legacy"
+    }],
+    ["@babel/proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/proposal-class-properties", {
+      "loose": true
+    }],
+    "@babel/transform-runtime",
+    "@babel/proposal-export-default-from"
   ]
 }

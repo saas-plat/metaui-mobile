@@ -9,7 +9,7 @@ import {
   UIContainer,
   UIStore,
   UIRender
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 import dataAddon from '../.storybook/data/dataAddon';
 import {
   observable

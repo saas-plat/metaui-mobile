@@ -18,9 +18,9 @@ export default class Input extends Base {
     const {
       config
     } = this.props;
-    const {
-      getFieldProps
-    } = this.props.form;
+    // const {
+    //   getFieldProps
+    // } = this.props.form;
     const moneyProps = config.type === 'money' ? {
       normalize: (v, prev) => {
         if (v && !/^(([1-9]\d*)|0)(\.\d{0,2}?)?$/.test(v)) {
@@ -32,7 +32,7 @@ export default class Input extends Base {
         return v;
       }
     } : {};
-    const formProps = getFieldProps(config.name);
+    const formProps = {}; // getFieldProps(config.name);
     return (<InputItem
         key={config.key}
         {...formProps}
@@ -45,7 +45,7 @@ export default class Input extends Base {
         maxLength={config.maxLength}
         labelNumber={config.labelNumber}
         defaultValue={config.defaultValue}
-        value={this.context.viewModel[config.value]}
+        value={config.value}
         onChange={(value)=>this.context.onEvent(config, 'change', {value})}
         onBlur={()=>this.context.onEvent(config, 'blur')}
         onFocus={()=>this.context.onEvent(config, 'focus')}

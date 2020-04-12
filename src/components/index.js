@@ -8,7 +8,7 @@ import {
   FilterModel,
   ListModel,
   TreeModel
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 // layout
 import Layout from './Layout';
 import Group from './Group';

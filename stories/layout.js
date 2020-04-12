@@ -9,7 +9,7 @@ import {
   UIContainer,
   UIStore,
   UIRender
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 import {
   observable
 } from "mobx";
@@ -97,7 +97,7 @@ const tabs = UIStore.create({
     }]
   }]
 }, data).ui
- 
+
 
 const list = UIStore.create({
   type: 'view',

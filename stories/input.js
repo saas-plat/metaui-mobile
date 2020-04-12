@@ -9,7 +9,7 @@ import {
   UIRender,
   UIContainer,
   UIStore,
-} from 'saas-plat-metaui';
+} from '@saas-plat/metaui';
 import {
   observable
 } from "mobx";
@@ -404,7 +404,7 @@ storiesOf('输入类', module)
     data
   })
   .addDecorator(dataAddon)
- 
+
   .add('TextBox', () => <UIContainer
     onEvent={(name,args)=>action(name)(args)}
     onAction={(name,args)=>action(name)(args)}>

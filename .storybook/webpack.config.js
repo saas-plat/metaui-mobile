@@ -11,7 +11,7 @@ module.exports = {
     extensions: ['.js', '.less', '.json']
   },
   watchOptions: {
-    ignored: /node_modules\/(?!saas-plat)/
+    ignored: /node_modules\/(?!@saas-plat)/
   },
   module: {
     rules: [{
