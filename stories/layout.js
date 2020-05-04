@@ -7,7 +7,7 @@ import {
 } from '@storybook/addon-actions';
 import {
   UIContainer,
-  UIStore,
+  MetaUI,
   UIRender
 } from '@saas-plat/metaui';
 import {
@@ -32,7 +32,7 @@ const data = observable({
   array1: [1, 2, 3, 4, 100, 1000000.11]
 });
 
-const groups = UIStore.create({
+const groups = MetaUI.create({
   type: 'group',
   items: [{
     type: 'view',
@@ -64,7 +64,7 @@ const groups = UIStore.create({
   }]
 }, data).ui
 
-const tabs = UIStore.create({
+const tabs = MetaUI.create({
   type: 'group',
   layout: 'tab',
   items: [{
@@ -99,7 +99,7 @@ const tabs = UIStore.create({
 }, data).ui
 
 
-const list = UIStore.create({
+const list = MetaUI.create({
   type: 'view',
   layout: 'list',
   items: [{
