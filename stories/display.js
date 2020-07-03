@@ -7,7 +7,7 @@ import {
 } from '@storybook/addon-actions';
 import {
   UIContainer,
-  UIStore,
+  MetaUI,
   UIRender
 } from '@saas-plat/metaui';
 import dataAddon from '../.storybook/data/dataAddon';
@@ -18,29 +18,29 @@ import '../src';
 
 const data = {}
 
-const grouplist = UIStore.create({
+const grouplist = MetaUI.create({
   name: 'table',
   type: 'table',
 
 }, data).ui;
 
-const detaillist = UIStore.create({
+const detaillist = MetaUI.create({
   name: 'table',
   type: 'table',
 
 }, data).ui;
 
-const bar = UIStore.create({
+const bar = MetaUI.create({
   type: 'chart',
 
 }, data).ui;
 
-const pie = UIStore.create({
+const pie = MetaUI.create({
   type: 'chart',
 
 }, data).ui;
 
-const line = UIStore.create({
+const line = MetaUI.create({
   type: 'chart',
 
 }, data).ui;

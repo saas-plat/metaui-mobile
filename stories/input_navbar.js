@@ -8,13 +8,13 @@ import {
 import {
   UIRender,
   UIContainer,
-  UIStore,
+  MetaUI,
 } from '@saas-plat/metaui';
 
 import '../src';
 import './style.less';
 
-const navbar = UIStore.create({
+const navbar = MetaUI.create({
   type: 'navbar',
   text: 'this is title',
   items: [{

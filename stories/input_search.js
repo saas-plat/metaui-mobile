@@ -7,7 +7,7 @@ import {
 } from '@storybook/addon-actions';
 import {
   UIContainer,
-  UIStore,
+  MetaUI,
   UIRender
 } from '@saas-plat/metaui';
 import dataAddon from '../.storybook/data/dataAddon';
@@ -15,7 +15,7 @@ import '../src';
 
 const data = {}
 
-const search = UIStore.create({
+const search = MetaUI.create({
   name: 'table',
   type: 'table',
 

@@ -6,11 +6,19 @@ import {
   action
 } from '@storybook/addon-actions';
 import {
+  registerApi,
   UIContainer,
-  UIStore,
+  MetaUI,
   UIRender
 } from '@saas-plat/metaui';
+import i18n from 'i18next';
 import '../src';
+
+i18n.init()
+
+registerApi({
+  i18n
+})
 
 const data = {
   code: '',
@@ -28,7 +36,7 @@ const data = {
   array1: [1, 2, 3, 4, 100, 1000000.11]
 };
 
-const report = UIStore.create({
+const report = MetaUI.create({
   type: 'view',
   items:[{
      type: 'navbar',
@@ -82,7 +90,7 @@ const report = UIStore.create({
    }]
 }, data)
 
-const voucher = UIStore.create({
+const voucher = MetaUI.create({
   type: 'view',
   layout: 'vertical',
   items: [{

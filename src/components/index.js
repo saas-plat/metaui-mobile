@@ -1,5 +1,5 @@
 import {
-  UIStore,
+  MetaUI,
   ContainerModel,
   SimpleModel,
   TableModel,
@@ -28,7 +28,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 
-UIStore.register({
+MetaUI.register({
   // layout
   view: [Layout, ContainerModel],
   group: [Group, ContainerModel],

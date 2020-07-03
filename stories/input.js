@@ -8,7 +8,7 @@ import {
 import {
   UIRender,
   UIContainer,
-  UIStore,
+  MetaUI,
 } from '@saas-plat/metaui';
 import {
   observable
@@ -17,7 +17,7 @@ import '../src';
 import dataAddon from '../.storybook/data/dataAddon';
 import './style.less';
 
-const store = new UIStore();
+const store = new MetaUI();
 const data = observable({
   text: 'AAAAAAAAA',
   date: new Date(),
@@ -63,7 +63,7 @@ const data = observable({
 store.setModel(data);
 
 
-const textbox = store.build(UIStore.createSchema({
+const textbox = store.build(MetaUI.createSchema({
   type: 'text',
   value: '$text',
   setValue: 'text',
@@ -73,7 +73,7 @@ const textbox = store.build(UIStore.createSchema({
   error: 'xxxxxxxxx',
   required: true
 }));
-const intstring = store.build(UIStore.createSchema({
+const intstring = store.build(MetaUI.createSchema({
   type: 'text',
   value: '$text',
   setValue: 'text',
@@ -83,7 +83,7 @@ const intstring = store.build(UIStore.createSchema({
   tip: 'xxxxxxxxxxxxx',
   required: true
 }));
-const password = store.build(UIStore.createSchema({
+const password = store.build(MetaUI.createSchema({
   type: 'text',
   value: '$text',
   setValue: 'text',
@@ -93,7 +93,7 @@ const password = store.build(UIStore.createSchema({
   tip: 'xxxxxxxxxxxxx',
   required: true
 }));
-const textarea = store.build(UIStore.createSchema({
+const textarea = store.build(MetaUI.createSchema({
   type: 'textarea',
   value: '$text',
   setValue: 'text',
@@ -102,7 +102,7 @@ const textarea = store.build(UIStore.createSchema({
   required: true
 }));
 
-const datetime = store.build(UIStore.createSchema({
+const datetime = store.build(MetaUI.createSchema({
   type: 'datetime',
   value: '$date',
   setValue: 'date',
@@ -110,14 +110,14 @@ const datetime = store.build(UIStore.createSchema({
   extra: 'xxxxxxxxxxxxx'
 }));
 
-const time = store.build(UIStore.createSchema({
+const time = store.build(MetaUI.createSchema({
   type: 'time',
   value: '$date',
   setValue: 'date',
   text: 'time'
 }));
 
-const date = store.build(UIStore.createSchema({
+const date = store.build(MetaUI.createSchema({
   type: 'date',
   value: '$date',
   setValue: 'date',
@@ -125,35 +125,35 @@ const date = store.build(UIStore.createSchema({
   extra: 'xxxxxxxxxxxxx'
 }));
 
-const month = store.build(UIStore.createSchema({
+const month = store.build(MetaUI.createSchema({
   type: 'month',
   value: '$date',
   setValue: 'date',
   text: 'time'
 }));
 
-const week = store.build(UIStore.createSchema({
+const week = store.build(MetaUI.createSchema({
   type: 'week',
   value: '$date',
   setValue: 'date',
   text: 'time'
 }));
 
-const daterange = store.build(UIStore.createSchema({
+const daterange = store.build(MetaUI.createSchema({
   type: 'daterange',
   value: '$dates',
   setValue: 'dates',
   text: 'time'
 }));
 
-const number = store.build(UIStore.createSchema({
+const number = store.build(MetaUI.createSchema({
   type: 'number',
   value: '$number',
   setValue: 'number',
   text: 'number'
 }));
 
-const thousandth = store.build(UIStore.createSchema({
+const thousandth = store.build(MetaUI.createSchema({
   type: 'number',
   value: '$number',
   setValue: 'number',
@@ -161,7 +161,7 @@ const thousandth = store.build(UIStore.createSchema({
   text: 'number'
 }));
 
-const percentage = store.build(UIStore.createSchema({
+const percentage = store.build(MetaUI.createSchema({
   type: 'number',
   value: '$number',
   setValue: 'number',
@@ -169,13 +169,13 @@ const percentage = store.build(UIStore.createSchema({
   text: 'number'
 }));
 
-const check = store.build(UIStore.createSchema({
+const check = store.build(MetaUI.createSchema({
   type: 'check',
   value: '$bool',
   setValue: 'bool',
   text: 'check'
 }));
-const switch1 = store.build(UIStore.createSchema({
+const switch1 = store.build(MetaUI.createSchema({
   type: 'switch',
   value: '$bool',
   setValue: 'bool',
@@ -184,7 +184,7 @@ const switch1 = store.build(UIStore.createSchema({
 
 
 
-const multipleselect = store.build(UIStore.createSchema({
+const multipleselect = store.build(MetaUI.createSchema({
   name: 'treesel',
   type: 'select',
   dropdownStyle: 'tree',
@@ -195,7 +195,7 @@ const multipleselect = store.build(UIStore.createSchema({
 
 }));
 
-const reflist = store.build(UIStore.createSchema({
+const reflist = store.build(MetaUI.createSchema({
   name: 'item2',
   type: 'refer',
   displayField: 'b',
@@ -225,7 +225,7 @@ const reflist = store.build(UIStore.createSchema({
   }]
 }));
 
-const reftablemultiple = store.build(UIStore.createSchema({
+const reftablemultiple = store.build(MetaUI.createSchema({
   name: 'item4',
   type: 'refer',
   displayField: 'b',
@@ -258,7 +258,7 @@ const reftablemultiple = store.build(UIStore.createSchema({
 }));
 
 // treetable和table带tree是不一样的，tree和table是不同的数据结构
-const reftable = store.build(UIStore.createSchema({
+const reftable = store.build(MetaUI.createSchema({
   name: 'item6',
   type: 'refer',
   label: 'xxxxxxx',
@@ -314,7 +314,7 @@ const reftable = store.build(UIStore.createSchema({
   }]
 }));
 
-const subtable = store.build(UIStore.createSchema({
+const subtable = store.build(MetaUI.createSchema({
   name: 'subtable',
   type: 'subtable',
   dataSource: '$refobjs',
@@ -359,7 +359,7 @@ const subtable = store.build(UIStore.createSchema({
   }
 }));
 
-const edittable = store.build(UIStore.createSchema({
+const edittable = store.build(MetaUI.createSchema({
   name: 'subtable',
   type: 'edittable',
   dataSource: '$refobjs',
