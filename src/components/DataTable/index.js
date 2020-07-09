@@ -38,8 +38,8 @@ export default class DataTable extends Base{
       refreshing: false,
     };
 
-    context.onLoadMore(this.onEndReached);
-    context.onRefresh(this.onRefresh);
+    context.onLoadMore && context.onLoadMore(this.onEndReached);
+    context.onRefresh && context.onRefresh(this.onRefresh);
   }
 
   onRefresh=()=>{

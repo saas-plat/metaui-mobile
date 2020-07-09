@@ -10,40 +10,43 @@ import {
   MetaUI,
   UIRender
 } from '@saas-plat/metaui';
-import dataAddon from '../.storybook/data/dataAddon';
 import {
-  observable
-} from "mobx";
+  View
+} from '@saas-plat/metaschema';
+import dataAddon from '../.storybook/data/dataAddon';
 import '../src';
 
 const data = {}
 
-const grouplist = MetaUI.create({
+const grouplist = MetaUI.create(View({
   name: 'table',
   type: 'table',
 
-}, data).ui;
+}), data).ui;
 
-const detaillist = MetaUI.create({
+const detaillist = MetaUI.create(View({
   name: 'table',
   type: 'table',
 
-}, data).ui;
+}), data).ui;
 
-const bar = MetaUI.create({
+const bar = MetaUI.create(View({
   type: 'chart',
+  height: 300,
+  width: '100%',
+}), data).ui;
 
-}, data).ui;
-
-const pie = MetaUI.create({
+const pie = MetaUI.create(View({
   type: 'chart',
+  height: 300,
+  width: '100%',
+}), data).ui;
 
-}, data).ui;
-
-const line = MetaUI.create({
+const line = MetaUI.create(View({
   type: 'chart',
-
-}, data).ui;
+  height: 300,
+  width: '100%',
+}), data).ui;
 
 storiesOf('展示类', module)
   .addParameters({

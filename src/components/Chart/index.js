@@ -82,7 +82,7 @@ export default class Chart extends Base {
          <ActivityIndicator toast animating={!this.state.Echart}/>
           {this.state.Echart?<this.state.Echart
             option={this.getOption()}
-            style={{height:topx(config.style.height), width: topx(config.style.width)}}
+            style={{height:topx(config.height), width: topx(config.width)}}
             // notMerge={true}
             // lazyUpdate={true}
             //theme="my_theme"

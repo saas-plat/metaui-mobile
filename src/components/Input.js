@@ -10,7 +10,7 @@ import Base from './Base';
 export default class Input extends Base {
 
   static propTypes = {
-    form: PropTypes.object.isRequired,
+    // form: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
   }
 

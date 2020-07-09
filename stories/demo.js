@@ -6,17 +6,20 @@ import {
   action
 } from '@storybook/addon-actions';
 import {
-  registerApi,
   UIContainer,
   MetaUI,
   UIRender
 } from '@saas-plat/metaui';
+import {
+  View
+} from '@saas-plat/metaschema';
+import {
+  register
+} from '@saas-plat/metaapi';
 import i18n from 'i18next';
 import '../src';
 
-i18n.init()
-
-registerApi({
+register({
   i18n
 })
 
@@ -36,7 +39,7 @@ const data = {
   array1: [1, 2, 3, 4, 100, 1000000.11]
 };
 
-const report = MetaUI.create({
+const report = MetaUI.create(View({
   type: 'view',
   items:[{
      type: 'navbar',
@@ -88,9 +91,9 @@ const report = MetaUI.create({
        }]
      }
    }]
-}, data)
+}), data)
 
-const voucher = MetaUI.create({
+const voucher = MetaUI.create(View({
   type: 'view',
   layout: 'vertical',
   items: [{
@@ -103,7 +106,7 @@ const voucher = MetaUI.create({
       required: true
     }]
   }]
-}, data)
+}), data)
 
 storiesOf('示例', module)
   .addParameters({

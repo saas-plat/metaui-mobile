@@ -10,11 +10,14 @@ import {
   UIContainer,
   MetaUI,
 } from '@saas-plat/metaui';
+import {
+  View
+} from '@saas-plat/metaschema';
 
 import '../src';
 import './style.less';
 
-const navbar = MetaUI.create({
+const navbar = MetaUI.create(View({
   type: 'navbar',
   text: 'this is title',
   items: [{
@@ -38,7 +41,7 @@ const navbar = MetaUI.create({
     text: '删除',
     onClick: 'delete'
   }]
-}, {}).ui;
+}), {}).ui;
 
 storiesOf('输入类', module)
   .add('Navbar', () => <UIContainer

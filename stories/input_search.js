@@ -10,16 +10,19 @@ import {
   MetaUI,
   UIRender
 } from '@saas-plat/metaui';
+import {
+  View
+} from '@saas-plat/metaschema';
 import dataAddon from '../.storybook/data/dataAddon';
 import '../src';
 
 const data = {}
 
-const search = MetaUI.create({
+const search = MetaUI.create(View({
   name: 'table',
   type: 'table',
 
-}, data).ui;
+}), data).ui;
 
 storiesOf('输入类', module)
   .addParameters({

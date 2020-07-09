@@ -8,21 +8,28 @@ import {
 } from 'antd-mobile';
 import ScrollView from './ScrollView';
 import Base from './Base';
+import {
+  ContainerModel
+} from '@saas-plat/metaui';
 
 @observer
 export default class Layout extends Base {
   static propTypes = {
-    form: PropTypes.object.isRequired,
+    // form: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
-    value: PropTypes.object.isRequired,
+    // value: PropTypes.object.isRequired,
   }
 
   renderList(list, value) {
-    return (
-      <List renderHeader={() => list.headerText} key={list.key}>
-        {list.items.map(input => this.renderItem(input,{value,form:this.props.form}))}
-      </List>
-    );
+    if (list instanceof ContainerModel) {
+      return (<List renderHeader={() => list.headerText} key={list.key}>
+        {list.items.map(input => this.renderItem(input,{value }))}
+      </List>);
+    } else {
+      return this.renderItem(list, {
+        value
+      });
+    }
   }
 
   render() {
@@ -34,7 +41,7 @@ export default class Layout extends Base {
       state
     } = config; // readonly
     return (
-      <ScrollView className='form'>
+      <ScrollView className='layout'>
         {config.items.map((list) => this.renderList(list,value))}
       </ScrollView>
     );
